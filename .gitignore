@@ -3,3 +3,4 @@ package-lock.json
 
 # minified themes
 themes/*.min.css
+dist
