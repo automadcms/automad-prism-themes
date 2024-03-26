@@ -1,66 +1,19 @@
-const fs = require('fs').promises;
+const fsAsync = require('fs').promises;
 const { src, dest, parallel } = require('gulp');
-const cleanCSS = require('gulp-clean-css')
-const rename = require('gulp-rename')
-const captureWebsite = require('capture-website');
+const cleanCSS = require('gulp-clean-css');
 const path = require('path');
-
-
-const themesDir = path.join(__dirname, 'themes');
+const header = require('gulp-header');
+const fs = require('fs');
+const distDir = path.join(__dirname, 'dist');
 const screenshotDir = path.join(__dirname, 'screenshots');
 
 /**
  * Returns the names of all themes. This includes the `prism-` prefix.
  */
 async function getThemes() {
-	return (await fs.readdir(themesDir)).map(f => (/^.+(?=\.css$)/.exec(f) || [''])[0]).filter(f => f);
-}
-
-/**
- * Takes a screenshot of all themes overwriting the old ones.
- */
-async function screenshotAllThemes() {
-	for (const theme of await getThemes()) {
-		await screenshotTheme(theme, true);
-	}
-}
-
-/**
- * Takes a screenshot of themes which don't have one already.
- */
-async function screenshotMissingThemes() {
-	for (const theme of await getThemes()) {
-		await screenshotTheme(theme, false);
-	}
-}
-
-/**
- * Takes a screenshot of the given themes and saves the image file in the screenshot directory.
- *
- * __IMPORTANT:__ Screenshots have to be taken sequentially, one after an other, to prevent a memory leak.
- *
- * @param {string} theme
- * @param {boolean} overwrite
- */
-async function screenshotTheme(theme, overwrite) {
-	const file = `${screenshotDir}/${theme}.png`;
-
-	if (await fs.stat(file).then(s => s.isFile()).catch(() => false)) {
-		if (overwrite) {
-			await fs.unlink(file);
-		} else {
-			return;
-		}
-	}
-
-	await captureWebsite.file(screenshotDir + '/code.html', file, {
-		defaultBackground: false,
-		scaleFactor: 1,
-		element: 'pre',
-		styles: [
-			await fs.readFile(`${themesDir}/${theme}.css`, 'utf-8')
-		]
-	});
+	return (await fsAsync.readdir(distDir))
+		.map((f) => (/^.+(?=\.css$)/.exec(f) || [''])[0])
+		.filter((f) => f);
 }
 
 /**
@@ -69,7 +22,12 @@ async function screenshotTheme(theme, overwrite) {
 async function checkScreenshots() {
 	for (const theme of await getThemes()) {
 		const file = `${screenshotDir}/${theme}.png`;
-		if (!await fs.stat(file).then(s => s.isFile()).catch(() => false)) {
+		if (
+			!(await fsAsync
+				.stat(file)
+				.then((s) => s.isFile())
+				.catch(() => false))
+		) {
 			throw new Error(`The theme "${theme}" doesn't have a screenshot.`);
 		}
 	}
@@ -79,42 +37,45 @@ async function checkScreenshots() {
  * Checks that all themes are in the list of available themes.
  */
 async function checkAvailableThemes() {
-	const readme = await fs.readFile(path.join(__dirname, 'README.md'), 'utf-8');
+	const readme = await fsAsync.readFile(
+		path.join(__dirname, 'README.md'),
+		'utf-8',
+	);
 
 	for (const theme of await getThemes()) {
-		if (!readme.includes(theme + ".css")) {
-			throw new Error(`The theme "${theme}" is not included in the list of available themes.`);
+		if (!readme.includes(theme + '.css')) {
+			throw new Error(
+				`The theme "${theme}" is not included in the list of available themes.`,
+			);
 		}
-		if (!readme.includes(theme + ".png")) {
-			throw new Error(`The screenshot of "${theme}" is not included in the list of available themes.`);
+		if (!readme.includes(theme + '.png')) {
+			throw new Error(
+				`The screenshot of "${theme}" is not included in the list of available themes.`,
+			);
 		}
 	}
 }
 
-
 const ISSUE_RE = /#(\d+)(?![\d\]])/g;
-const ISSUE_SUB = '[#$1](https://github.com/PrismJS/prism-themes/issues/$1)';
+const ISSUE_SUB =
+	'[#$1](https://github.com/automadcms/automad-prism-themes/issues/$1)';
 const CHANGELOG = 'CHANGELOG.md';
 
 async function linkify() {
-	let changelog = await fs.readFile(CHANGELOG, 'utf-8');
+	let changelog = await fsAsync.readFile(CHANGELOG, 'utf-8');
 
 	changelog = changelog.replace(ISSUE_RE, ISSUE_SUB);
 
-	await fs.writeFile(CHANGELOG, changelog, 'utf-8');
+	await fsAsync.writeFile(CHANGELOG, changelog, 'utf-8');
 }
-
 
 function minify() {
-	return src(['themes/*.css', '!themes/*.min.css'])
+	return src(['themes/*.css', '!themes/base.css'])
+		.pipe(header(fs.readFileSync('./themes/base.css', 'utf8')))
 		.pipe(cleanCSS())
-		.pipe(rename({ suffix: '.min' }))
-		.pipe(dest('themes/'));
+		.pipe(dest('dist/'));
 }
 
-
-exports.screenshot = screenshotMissingThemes;
-exports['screenshot-all'] = screenshotAllThemes;
 exports.check = parallel(checkScreenshots, checkAvailableThemes);
 exports.linkify = linkify;
 exports.minify = minify;
