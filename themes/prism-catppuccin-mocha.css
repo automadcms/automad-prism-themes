@@ -1,0 +1,143 @@
+/**
+ * https://github.com/catppuccin
+ */
+
+code[class*='language-'],
+pre[class*='language-'] {
+	color: #cdd6f4;
+}
+
+pre[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection,
+code[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection {
+	text-shadow: none;
+	background: #9399b240;
+}
+
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
+	text-shadow: none;
+	background: #9399b240;
+}
+
+@media print {
+	code[class*='language-'],
+	pre[class*='language-'] {
+		text-shadow: none;
+	}
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+	color: white;
+	background: #1e1e2e;
+}
+
+:not(pre) > code[class*='language-'] {
+	padding: 0.1em;
+	border-radius: 0.3em;
+	white-space: normal;
+}
+
+.token.variable {
+	color: #cdd6f4;
+}
+
+.token.regex {
+	color: #cdd6f4;
+}
+
+.token.punctuation {
+	color: #94e2d5;
+}
+
+.token.operator {
+	color: #94e2d5;
+}
+
+.token.comment {
+	color: #6c7086;
+	font-style: italic;
+}
+
+.token.string {
+	color: #a6e3a1;
+}
+
+.token.inserted {
+	color: #a6e3a1;
+}
+
+.token.char {
+	color: #f5c2e7;
+}
+
+.token.constant {
+	color: #f5c2e7;
+}
+
+.token.number {
+	color: #fab387;
+}
+
+.token.builtin {
+	color: #fab387;
+}
+
+.token.boolean {
+	color: #fab387;
+}
+
+.token.changed {
+	color: #fab387;
+}
+
+.token.keyword {
+	color: #cba6f7;
+}
+
+.token.tag {
+	color: #cba6f7;
+}
+
+.token.function {
+	color: #89b4fa;
+	font-style: italic;
+}
+
+.token.class-name {
+	color: #f9e2af;
+	font-style: italic;
+}
+
+.token.attr-name {
+	color: #f38ba8;
+}
+
+.token.selector {
+	color: #f38ba8;
+}
+
+.token.deleted {
+	color: #f38ba8;
+}
+
+.token.property {
+	color: #89b4fa;
+}
+
+.token.symbol {
+	color: #eba0ac;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+
+.token.italic {
+	font-style: italic;
+}

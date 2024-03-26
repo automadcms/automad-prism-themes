@@ -1,0 +1,137 @@
+/**
+ * https://github.com/enkia/tokyo-night-vscode-theme
+ */
+
+code[class*='language-'],
+pre[class*='language-'] {
+	color: #343b59;
+}
+
+pre[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection,
+code[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection {
+	text-shadow: none;
+	background: #fafbff40;
+}
+
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
+	text-shadow: none;
+	background: #fafbff40;
+}
+
+@media print {
+	code[class*='language-'],
+	pre[class*='language-'] {
+		text-shadow: none;
+	}
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+	color: white;
+	background: #d5d6db;
+}
+
+:not(pre) > code[class*='language-'] {
+	padding: 0.1em;
+	border-radius: 0.3em;
+	white-space: normal;
+}
+
+.token.comment {
+	color: undefined;
+	font-style: italic;
+}
+
+.token.keyword {
+	color: #4c505e;
+}
+
+.token.operator {
+	color: #4c505e;
+}
+
+.token.punctuation {
+	color: #9699a3;
+}
+
+.token.builtin {
+	color: #965027;
+}
+
+.token.number {
+	color: #965027;
+}
+
+.token.constant {
+	color: #965027;
+}
+
+.token.string {
+	color: #485e30;
+}
+
+.token.symbol {
+	color: #485e30;
+}
+
+.token.attr-name {
+	color: #485e30;
+}
+
+.token.selector {
+	color: #485e30;
+}
+
+.token.hexcode {
+	color: #565a6e;
+}
+
+.token.function {
+	color: #166775;
+}
+
+.token.tag {
+	color: #8c4351;
+}
+
+.token.variable {
+	color: #8f5e15;
+}
+
+.token.char {
+	color: #5a4a78;
+}
+
+.token.property {
+	color: #484c61;
+}
+
+.token.inserted {
+	color: #449dab;
+}
+
+.token.deleted {
+	color: #914c54;
+}
+
+.token.changed {
+	color: #34548a;
+}
+
+.token.regex {
+	color: #3e6968;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+
+.token.italic {
+	font-style: italic;
+}

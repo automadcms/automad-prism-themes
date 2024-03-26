@@ -1,0 +1,124 @@
+/**
+ * https://github.com/daltonmenezes/aura-theme
+ */
+
+code[class*='language-'],
+pre[class*='language-'] {
+	color: #edecee;
+}
+
+pre[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection,
+code[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection {
+	text-shadow: none;
+	background: #3d375e7f;
+}
+
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
+	text-shadow: none;
+	background: #3d375e7f;
+}
+
+@media print {
+	code[class*='language-'],
+	pre[class*='language-'] {
+		text-shadow: none;
+	}
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+	color: white;
+	background: #15141b;
+}
+
+:not(pre) > code[class*='language-'] {
+	padding: 0.1em;
+	border-radius: 0.3em;
+	white-space: normal;
+}
+
+.token.tag {
+	color: #a277ff;
+}
+
+.token.variable {
+	color: #a277ff;
+}
+
+.token.keyword {
+	color: #a277ff;
+}
+
+.token.operator {
+	color: #a277ff;
+}
+
+.token.attr-name {
+	color: #a277ff;
+}
+
+.token.selector {
+	color: #a277ff;
+}
+
+.token.punctuation {
+	color: #a277ff;
+}
+
+.token.constant {
+	color: #a277ff;
+}
+
+.token.hexcode {
+	color: #a277ff;
+}
+
+.token.string {
+	color: #61ffca;
+}
+
+.token.inserted {
+	color: #61ffca;
+}
+
+.token.changed {
+	color: #ffca85;
+}
+
+.token.function {
+	color: #ffca85;
+}
+
+.token.deleted {
+	color: #ff6767;
+}
+
+.token.builtin {
+	color: #f694ff;
+}
+
+.token.property {
+	color: #f694ff;
+}
+
+.token.comment {
+	color: #6d6d6d;
+}
+
+.token.class-name {
+	color: #82e2ff;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+
+.token.italic {
+	font-style: italic;
+}

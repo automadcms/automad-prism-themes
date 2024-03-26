@@ -1,0 +1,145 @@
+/**
+ * https://github.com/MatchaChoco010/vscode-dark-frost
+ */
+
+code[class*='language-'],
+pre[class*='language-'] {
+	color: #2c9d96e0;
+}
+
+pre[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection,
+code[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection {
+	text-shadow: none;
+	background: #0e3936;
+}
+
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
+	text-shadow: none;
+	background: #0e3936;
+}
+
+@media print {
+	code[class*='language-'],
+	pre[class*='language-'] {
+		text-shadow: none;
+	}
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+	color: white;
+	background: #040507;
+}
+
+:not(pre) > code[class*='language-'] {
+	padding: 0.1em;
+	border-radius: 0.3em;
+	white-space: normal;
+}
+
+.token.punctuation {
+	color: #96ecc1;
+}
+
+.token.constant {
+	color: #96ecc1;
+}
+
+.token.deleted {
+	color: #96ecc1;
+}
+
+.token.tag {
+	color: #96ecc1;
+}
+
+.token.variable {
+	color: #8da5a5;
+}
+
+.token.keyword {
+	color: #8da5a5;
+}
+
+.token.selector {
+	color: #8da5a5;
+}
+
+.token.builtin {
+	color: #67c7c7;
+}
+
+.token.changed {
+	color: #67c7c7;
+}
+
+.token.namespace {
+	color: #67c7c7;
+}
+
+.token.class-name {
+	color: #67c7c7;
+}
+
+.token.operator {
+	color: #2c9d96e0;
+}
+
+.token.property {
+	color: #2c9d96e0;
+}
+
+.token.inserted {
+	color: #e0f6f7;
+}
+
+.token.string {
+	color: #e0f6f7;
+}
+
+.token.char {
+	color: #e1fffde0;
+}
+
+.token.number {
+	color: #e1fffde0;
+}
+
+.token.hexcode {
+	color: #e1fffde0;
+}
+
+.token.attr-name {
+	color: #e1fffde0;
+}
+
+.token.function {
+	color: #83ffdc;
+}
+
+.token.symbol {
+	color: #285e5c;
+}
+
+.token.regex {
+	color: #285e5c;
+}
+
+.token.comment {
+	color: undefined;
+	font-style: italic;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+
+.token.italic {
+	font-style: italic;
+}

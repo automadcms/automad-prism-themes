@@ -1,0 +1,96 @@
+/**
+ * https://github.com/nemoDreamer/vscode-theme-seashells
+ */
+
+code[class*='language-'],
+pre[class*='language-'] {
+	color: #deb88d;
+}
+
+pre[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection,
+code[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection {
+	text-shadow: none;
+	background: #1e4962;
+}
+
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
+	text-shadow: none;
+	background: #1e4962;
+}
+
+@media print {
+	code[class*='language-'],
+	pre[class*='language-'] {
+		text-shadow: none;
+	}
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+	color: white;
+	background: #0c1923;
+}
+
+:not(pre) > code[class*='language-'] {
+	padding: 0.1em;
+	border-radius: 0.3em;
+	white-space: normal;
+}
+
+.token.string {
+	color: #deb88d;
+}
+
+.token.builtin {
+	color: #fca02f;
+	font-style: italic;
+}
+
+.token.number {
+	color: #50a3b5;
+}
+
+.token.punctuation {
+	color: #50a3b5;
+}
+
+.token.variable {
+	color: undefined;
+	font-style: italic;
+}
+
+.token.keyword {
+	color: #68d4f1;
+	font-style: italic;
+}
+
+.token.comment {
+	color: #50a3b566;
+	font-style: italic;
+}
+
+.token.tag {
+	color: #68d4f1;
+}
+
+.token.attr-name {
+	color: #027c9b;
+}
+
+.token.selector {
+	color: #027c9b;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+
+.token.italic {
+	font-style: italic;
+}

@@ -1,0 +1,112 @@
+/**
+ * https://github.com/anotherglitchinthematrix/monochrome
+ */
+
+code[class*='language-'],
+pre[class*='language-'] {
+	color: #515151;
+}
+
+pre[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection,
+code[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection {
+	text-shadow: none;
+	background: #dedede;
+}
+
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
+	text-shadow: none;
+	background: #dedede;
+}
+
+@media print {
+	code[class*='language-'],
+	pre[class*='language-'] {
+		text-shadow: none;
+	}
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+	color: white;
+	background: #ebebeb;
+}
+
+:not(pre) > code[class*='language-'] {
+	padding: 0.1em;
+	border-radius: 0.3em;
+	white-space: normal;
+}
+
+.token.variable {
+	color: #515151;
+}
+
+.token.operator {
+	color: #515151;
+}
+
+.token.keyword {
+	color: #6e6e6e;
+}
+
+.token.number {
+	color: #6e6e6e;
+}
+
+.token.constant {
+	color: #6e6e6e;
+}
+
+.token.hexcode {
+	color: #6e6e6e;
+}
+
+.token.attr-name {
+	color: #6e6e6e;
+}
+
+.token.builtin {
+	color: #7d7d7d;
+}
+
+.token.regex {
+	color: #7d7d7d;
+}
+
+.token.char {
+	color: #7d7d7d;
+}
+
+.token.tag {
+	color: #8b8b8b;
+}
+
+.token.deleted {
+	color: #8b8b8b;
+}
+
+.token.selector {
+	color: #8f8f8f;
+}
+
+.token.changed {
+	color: #8f8f8f;
+}
+
+.token.inserted {
+	color: #747474;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+
+.token.italic {
+	font-style: italic;
+}

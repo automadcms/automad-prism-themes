@@ -1,0 +1,133 @@
+/**
+ * https://github.com/tinkertrain/panda-syntax-vscode
+ */
+
+code[class*='language-'],
+pre[class*='language-'] {
+	color: #e6e6e6;
+}
+
+pre[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection,
+code[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection {
+	text-shadow: none;
+	background: #ffb86c40;
+}
+
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
+	text-shadow: none;
+	background: #ffb86c40;
+}
+
+@media print {
+	code[class*='language-'],
+	pre[class*='language-'] {
+		text-shadow: none;
+	}
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+	color: white;
+	background: #292a2b;
+}
+
+:not(pre) > code[class*='language-'] {
+	padding: 0.1em;
+	border-radius: 0.3em;
+	white-space: normal;
+}
+
+.token.comment {
+	color: #676b79;
+	font-style: italic;
+}
+
+.token.operator {
+	color: #e6e6e6;
+}
+
+.token.variable {
+	color: #e6e6e6;
+}
+
+.token.property {
+	color: #e6e6e6;
+}
+
+.token.constant {
+	color: #ffb86c;
+}
+
+.token.hexcode {
+	color: #ffb86c;
+}
+
+.token.char {
+	color: #45a9f9;
+}
+
+.token.string {
+	color: #19f9d8;
+}
+
+.token.symbol {
+	color: #19f9d8;
+}
+
+.token.inserted {
+	color: #19f9d8;
+}
+
+.token.punctuation {
+	color: #ffcc95;
+}
+
+.token.tag {
+	color: #ffcc95;
+}
+
+.token.attr-name {
+	color: #ffcc95;
+}
+
+.token.selector {
+	color: #ffcc95;
+}
+
+.token.builtin {
+	color: #6fc1ff;
+}
+
+.token.function {
+	color: #6fc1ff;
+}
+
+.token.regex {
+	color: #6fc1ff;
+}
+
+.token.keyword {
+	color: #ff9ac1;
+}
+
+.token.changed {
+	color: #ff75b5;
+}
+
+.token.deleted {
+	color: #ff2c6d;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+
+.token.italic {
+	font-style: italic;
+}

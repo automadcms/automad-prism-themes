@@ -1,0 +1,145 @@
+/**
+ * https://github.com/AlexandreFPGoncalves/violet-dream
+ */
+
+code[class*='language-'],
+pre[class*='language-'] {
+	color: #e9e1f8;
+}
+
+pre[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection,
+code[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection {
+	text-shadow: none;
+	background: #6b77ff50;
+}
+
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
+	text-shadow: none;
+	background: #6b77ff50;
+}
+
+@media print {
+	code[class*='language-'],
+	pre[class*='language-'] {
+		text-shadow: none;
+	}
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+	color: white;
+	background: #15151f;
+}
+
+:not(pre) > code[class*='language-'] {
+	padding: 0.1em;
+	border-radius: 0.3em;
+	white-space: normal;
+}
+
+.token.punctuation {
+	color: #c084fc;
+}
+
+.token.constant {
+	color: #c084fc;
+}
+
+.token.deleted {
+	color: #c084fc;
+}
+
+.token.tag {
+	color: #c084fc;
+}
+
+.token.variable {
+	color: #8b5cf6;
+}
+
+.token.keyword {
+	color: #8b5cf6;
+}
+
+.token.selector {
+	color: #8b5cf6;
+}
+
+.token.builtin {
+	color: #88d1fc;
+}
+
+.token.changed {
+	color: #88d1fc;
+}
+
+.token.namespace {
+	color: #88d1fc;
+}
+
+.token.class-name {
+	color: #88d1fc;
+}
+
+.token.operator {
+	color: #818cf8c5;
+}
+
+.token.property {
+	color: #818cf8c5;
+}
+
+.token.inserted {
+	color: #e8dbff;
+}
+
+.token.string {
+	color: #e8dbff;
+}
+
+.token.char {
+	color: #e5a7fc;
+}
+
+.token.number {
+	color: #e5a7fc;
+}
+
+.token.hexcode {
+	color: #e5a7fc;
+}
+
+.token.attr-name {
+	color: #e5a7fc;
+}
+
+.token.function {
+	color: #818cf8;
+}
+
+.token.symbol {
+	color: #a78bfa;
+}
+
+.token.regex {
+	color: #a78bfa;
+}
+
+.token.comment {
+	color: undefined;
+	font-style: italic;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+
+.token.italic {
+	font-style: italic;
+}

@@ -1,0 +1,120 @@
+/**
+ * https://github.com/nyomansunima/boola
+ */
+
+code[class*='language-'],
+pre[class*='language-'] {
+	color: #1f2328;
+}
+
+pre[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection,
+code[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection {
+	text-shadow: none;
+	background: undefined;
+}
+
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
+	text-shadow: none;
+	background: undefined;
+}
+
+@media print {
+	code[class*='language-'],
+	pre[class*='language-'] {
+		text-shadow: none;
+	}
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+	color: white;
+	background: #ffffff;
+}
+
+:not(pre) > code[class*='language-'] {
+	padding: 0.1em;
+	border-radius: 0.3em;
+	white-space: normal;
+}
+
+.token.comment {
+	color: #6e7781;
+}
+
+.token.punctuation {
+	color: #6e7781;
+}
+
+.token.string {
+	color: #6e7781;
+}
+
+.token.constant {
+	color: #cf222e;
+}
+
+.token.char {
+	color: #cf222e;
+}
+
+.token.hexcode {
+	color: #0550ae;
+}
+
+.token.builtin {
+	color: #0550ae;
+}
+
+.token.variable {
+	color: #0550ae;
+}
+
+.token.function {
+	color: #8250df;
+}
+
+.token.tag {
+	color: #341685;
+}
+
+.token.regex {
+	color: #0a3069;
+}
+
+.token.property {
+	color: #1f1b3c;
+}
+
+.token.attr-name {
+	color: #cd14c4;
+}
+
+.token.selector {
+	color: #cd14c4;
+}
+
+.token.deleted {
+	color: #82071e;
+}
+
+.token.inserted {
+	color: #116329;
+}
+
+.token.changed {
+	color: #953800;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+
+.token.italic {
+	font-style: italic;
+}

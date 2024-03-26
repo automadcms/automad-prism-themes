@@ -1,0 +1,104 @@
+/**
+ * https://github.com/rose-pine/prism
+ */
+
+code[class*='language-'],
+pre[class*='language-'] {
+	color: #575279;
+}
+
+pre[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection,
+code[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection {
+	text-shadow: none;
+	background: #6e6a8614;
+}
+
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
+	text-shadow: none;
+	background: #6e6a8614;
+}
+
+@media print {
+	code[class*='language-'],
+	pre[class*='language-'] {
+		text-shadow: none;
+	}
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+	color: white;
+	background: #faf4ed;
+}
+
+:not(pre) > code[class*='language-'] {
+	padding: 0.1em;
+	border-radius: 0.3em;
+	white-space: normal;
+}
+
+.token.comment {
+	color: #9893a5;
+}
+
+.token.constant {
+	color: #286983;
+}
+
+.token.hexcode {
+	color: #286983;
+}
+
+.token.punctuation {
+	color: #286983;
+}
+
+.token.number {
+	color: #d7827e;
+}
+
+.token.builtin {
+	color: #d7827e;
+}
+
+.token.variable {
+	color: #d7827e;
+}
+
+.token.tag {
+	color: #56949f;
+}
+
+.token.inserted {
+	color: #56949f;
+}
+
+.token.attr-name {
+	color: #907aa9;
+}
+
+.token.selector {
+	color: #907aa9;
+}
+
+.token.deleted {
+	color: #b4637a;
+}
+
+.token.string {
+	color: #ea9d34;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+
+.token.italic {
+	font-style: italic;
+}
