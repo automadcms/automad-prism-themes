@@ -1,5 +1,6 @@
 /**
  * https://github.com/enkia/tokyo-night-vscode-theme
+ * https://github.com/folke/tokyonight.nvim
  */
 
 code[class*='language-'],
@@ -43,12 +44,12 @@ pre[class*='language-'] {
 }
 
 .token.comment {
-	color: undefined;
+	color: #565f89;
 	font-style: italic;
 }
 
 .token.keyword {
-	color: #89ddff;
+	color: #9d7cd8;
 }
 
 .token.operator {
@@ -56,11 +57,11 @@ pre[class*='language-'] {
 }
 
 .token.punctuation {
-	color: #5f6996;
+	color: #bb9af7;
 }
 
 .token.builtin {
-	color: #ff9e64;
+	color: #f7768e;
 }
 
 .token.number {
@@ -76,11 +77,11 @@ pre[class*='language-'] {
 }
 
 .token.symbol {
-	color: #9ece6a;
+	color: #2ac3de;
 }
 
 .token.attr-name {
-	color: #9ece6a;
+	color: rgb(241, 250, 140);
 }
 
 .token.selector {
@@ -92,15 +93,15 @@ pre[class*='language-'] {
 }
 
 .token.function {
-	color: #2ac3de;
+	color: #7aa2f7;
 }
 
 .token.tag {
-	color: #f7768e;
+	color: #9ece6a;
 }
 
 .token.variable {
-	color: #e0af68;
+	color: #c0caf5;
 }
 
 .token.char {
@@ -108,7 +109,7 @@ pre[class*='language-'] {
 }
 
 .token.property {
-	color: #9abdf5;
+	color: #2ac3de;
 }
 
 .token.inserted {
@@ -134,4 +135,12 @@ pre[class*='language-'] {
 
 .token.italic {
 	font-style: italic;
+}
+
+.line-numbers.line-numbers .line-numbers-rows {
+	border-right-color: #565f8922;
+}
+
+.line-numbers .line-numbers-rows > span:before {
+	color: #565f8977;
 }
