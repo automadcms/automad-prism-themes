@@ -127,7 +127,7 @@ JS;
 				</div>
 			</div>
 		</nav>
-		<div class="container mt-6 line-numbers">
+		<div class="container my-6 line-numbers">
 			<pre><code class="language-typescript"><?php echo $code; ?></code></pre>
 		</div>
 	</body>
