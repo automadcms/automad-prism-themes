@@ -34,6 +34,7 @@ code[class*='language-'] ::selection {
 pre[class*='language-'] {
 	color: white;
 	background: #0a1219;
+	border: 1px solid #6b717729;
 }
 
 :not(pre) > code[class*='language-'] {

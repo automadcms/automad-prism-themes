@@ -63,7 +63,6 @@ pre[class*='language-'] *::selection {
 }
 
 .token.doctype,
-.token.punctuation,
 .token.entity {
 	color: hsl(230, 8%, 24%);
 }
@@ -92,7 +91,6 @@ pre[class*='language-'] *::selection {
 .token.selector,
 .token.string,
 .token.char,
-.token.builtin,
 .token.inserted,
 .token.regex,
 .token.attr-value,
@@ -101,7 +99,9 @@ pre[class*='language-'] *::selection {
 }
 
 .token.variable,
+.token.builtin,
 .token.operator,
+.token.punctuation,
 .token.function {
 	color: hsl(221, 87%, 60%);
 }

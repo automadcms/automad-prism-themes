@@ -145,9 +145,9 @@ pre[class*='language-'] {
 }
 
 .line-numbers.line-numbers .line-numbers-rows {
-	border-right-color: #285e5c33;
+	border-right-color: #285e5c44;
 }
 
 .line-numbers .line-numbers-rows > span:before {
-	color: #285e5c88;
+	color: #285e5cbb;
 }

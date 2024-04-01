@@ -46,6 +46,7 @@ pre[class*='language-'] {
 	color: #6e6a86;
 }
 
+.token.keyword,
 .token.constant {
 	color: #31748f;
 }
@@ -55,7 +56,7 @@ pre[class*='language-'] {
 }
 
 .token.punctuation {
-	color: #31748f;
+	color: #ebbcba;
 }
 
 .token.number {

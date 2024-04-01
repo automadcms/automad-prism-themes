@@ -34,6 +34,7 @@ code[class*='language-'] ::selection {
 pre[class*='language-'] {
 	color: white;
 	background: #ebebeb;
+	border: 1px solid #8f8f8f29;
 }
 
 :not(pre) > code[class*='language-'] {
@@ -116,7 +117,7 @@ pre[class*='language-'] {
 }
 
 .line-numbers.line-numbers .line-numbers-rows {
-	border-right-color: #8f8f8f29;
+	border-right-color: #8f8f8f38;
 }
 
 .line-numbers .line-numbers-rows > span:before {
