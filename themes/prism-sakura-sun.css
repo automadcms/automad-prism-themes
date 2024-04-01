@@ -1,0 +1,153 @@
+/*
+ * https://github.com/kayliese/sakura
+ */
+
+code[class*='language-'],
+pre[class*='language-'] {
+	color: #00d7ff;
+}
+
+pre[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection,
+code[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection {
+	text-shadow: none;
+	background: #f2547718;
+}
+
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
+	text-shadow: none;
+	background: #f2547718;
+}
+
+@media print {
+	code[class*='language-'],
+	pre[class*='language-'] {
+		text-shadow: none;
+	}
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+	color: white;
+	background: #070b11;
+}
+
+:not(pre) > code[class*='language-'] {
+	padding: 0.1em;
+	border-radius: 0.3em;
+	white-space: normal;
+}
+
+.token.punctuation {
+	color: #ffa7a6;
+}
+
+.token.constant {
+	color: #ffa7a6;
+}
+
+.token.deleted {
+	color: #ffa7a6;
+}
+
+.token.tag {
+	color: #ffa7a6;
+}
+
+.token.variable {
+	color: #f25477;
+}
+
+.token.keyword {
+	color: #f25477;
+}
+
+.token.selector {
+	color: #f25477;
+}
+
+.token.builtin {
+	color: #00d7ff;
+}
+
+.token.operator {
+	color: #00d7ff;
+}
+
+.token.changed {
+	color: #00d7ff;
+}
+
+.token.namespace {
+	color: #00d7ff;
+}
+
+.token.class-name {
+	color: #00d7ff;
+}
+
+.token.property {
+	color: #00d7ff;
+}
+
+.token.symbol {
+	color: #00d7ff;
+}
+
+.token.regex {
+	color: #00d7ff;
+}
+
+.token.inserted {
+	color: #ffdcdc;
+}
+
+.token.string {
+	color: #ffdcdc;
+}
+
+.token.char {
+	color: #256d85;
+}
+
+.token.number {
+	color: #256d85;
+}
+
+.token.hexcode {
+	color: #256d85;
+}
+
+.token.attr-name {
+	color: #256d85;
+}
+
+.token.function {
+	color: #0078aa;
+}
+
+.token.comment {
+	color: #ffffff55;
+	font-style: italic;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+
+.token.italic {
+	font-style: italic;
+}
+
+.line-numbers.line-numbers .line-numbers-rows {
+	border-right-color: #ffffff22;
+}
+
+.line-numbers .line-numbers-rows > span:before {
+	color: #ffffff33;
+}
