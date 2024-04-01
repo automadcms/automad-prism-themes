@@ -53,14 +53,14 @@ code[class*='language-'] ::selection {
 	opacity: 0.7;
 }
 
+.token.function,
 .token.tag,
 .token.operator,
 .token.number {
 	color: #bfa05a;
 }
 
-.token.property,
-.token.function {
+.token.property {
 	color: #88786d;
 }
 

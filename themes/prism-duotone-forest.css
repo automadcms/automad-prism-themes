@@ -59,8 +59,7 @@ code[class*='language-'] ::selection {
 	color: #a2b34d;
 }
 
-.token.property,
-.token.function {
+.token.property {
 	color: #687d68;
 }
 
@@ -70,6 +69,7 @@ code[class*='language-'] ::selection {
 	color: #f0fff0;
 }
 
+.token.function,
 code.language-javascript,
 .token.attr-name {
 	color: #b3d6b3;
