@@ -9,29 +9,33 @@
 			href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css"
 		/>
 		<style>
+			.theme-dark {
+				color-scheme: dark;
+				--bulma-scheme-main: hsl(220, 9%, 6%);
+			}
+
 			.grid {
-				--bulma-grid-gap: 3rem;
+				--bulma-grid-gap: 2.5rem;
+			}
+
+			@media (max-width: 600px) {
+				.grid {
+					--bulma-grid-column-min: 140px !important;
+					--bulma-grid-gap: 1.25rem;
+				}
 			}
 
 			img {
 				width: 100%;
-				border-radius: 0.5rem;
-				border: 1px solid var(--bulma-text-soft);
-			}
-
-			@media (prefers-color-scheme: dark) {
-				:root {
-					color-scheme: dark;
-				}
+				border-radius: 0.4rem;
+				border: 1px solid hsla(220, 9%, 50%, 0.25);
 			}
 		</style>
 	</head>
 	<body>
 		<nav class="navbar container is-fluid py-2">
 			<div class="navbar-brand">
-				<div
-					class="navbar-item has-text-primary-100 is-size-5 has-text-weight-medium px-0"
-				>
+				<div class="navbar-item is-size-5 has-text-weight-medium px-0">
 					Automad Prism Themes
 				</div>
 			</div>

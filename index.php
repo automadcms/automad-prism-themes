@@ -86,6 +86,7 @@ JS;
 
 			.theme-dark {
 				color-scheme: dark;
+				--bulma-scheme-main: hsl(220, 9%, 6%);
 			}
 
 			.dropdown-content {
