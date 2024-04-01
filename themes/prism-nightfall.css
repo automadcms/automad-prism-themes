@@ -1,0 +1,149 @@
+code[class*='language-'],
+pre[class*='language-'] {
+	color: #d4d4d4;
+}
+
+pre[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection,
+code[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection {
+	text-shadow: none;
+	background: #264f78;
+}
+
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
+	text-shadow: none;
+	background: #264f78;
+}
+
+@media print {
+	code[class*='language-'],
+	pre[class*='language-'] {
+		text-shadow: none;
+	}
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+	color: white;
+	background: #030c1b;
+}
+
+:not(pre) > code[class*='language-'] {
+	padding: 0.1em;
+	border-radius: 0.3em;
+	white-space: normal;
+}
+
+.token.punctuation {
+	color: #9cdcfe;
+}
+
+.token.constant {
+	color: #9cdcfe;
+}
+
+.token.deleted {
+	color: #9cdcfe;
+}
+
+.token.tag {
+	color: #9cdcfe;
+}
+
+.token.variable {
+	color: #c792ea;
+}
+
+.token.keyword {
+	color: #c792ea;
+}
+
+.token.selector {
+	color: #c792ea;
+}
+
+.token.builtin {
+	color: #4182bc;
+}
+
+.token.changed {
+	color: #4182bc;
+}
+
+.token.namespace {
+	color: #4182bc;
+}
+
+.token.class-name {
+	color: #4182bc;
+}
+
+.token.operator {
+	color: #d4d4d4;
+}
+
+.token.property {
+	color: #d4d4d4;
+}
+
+.token.symbol {
+	color: #d4d4d4;
+}
+
+.token.regex {
+	color: #d4d4d4;
+}
+
+.token.inserted {
+	color: #ce9178;
+}
+
+.token.char {
+	color: #ce9178;
+}
+
+.token.string {
+	color: #ce9178;
+}
+
+.token.number {
+	color: #ce9178;
+}
+
+.token.hexcode {
+	color: #ce9178;
+}
+
+.token.attr-name {
+	color: #ce9178;
+}
+
+.token.function {
+	color: #ecc48d;
+}
+
+.token.comment {
+	color: #d4d4d466;
+	font-style: italic;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+
+.token.italic {
+	font-style: italic;
+}
+
+.line-numbers.line-numbers .line-numbers-rows {
+	border-right-color: #d4d4d422;
+}
+
+.line-numbers .line-numbers-rows > span:before {
+	color: #d4d4d455;
+}
