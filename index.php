@@ -2,57 +2,16 @@
 
 $themes = array_map('basename', glob(__DIR__ . '/themes/prism-*.css'));
 $default = $themes[0];
-$selected = $_GET['theme'] ?? $default;
+$selectedTheme = $_GET['theme'] ?? $default;
+
+$examples = array_map(function ($file) { return basename(str_replace('.txt', '', $file)); }, glob(__DIR__ . '/examples/*.txt'));
+$selectedExample = $_GET['code'] ?? $examples[0];
+$code = htmlspecialchars(file_get_contents(__DIR__ . '/examples/'. $selectedExample . '.txt'));
 
 $lightmode = $_GET['light'] ?? false;
 $ui = $lightmode ? 'theme-light' : 'theme-dark';
 $uiButton = $lightmode ? 'dark' : 'light';
 $uiButtonQuery = http_build_query(array_merge($_GET, array('light' => !$lightmode)));
-
-$code = <<< JS
-/**
- * Register a keycombo.
- *
- * @param key
- * @param callback
- * @return the listener
- */
-export const keyCombo = (key: string, callback: Function): Listener => {
-	return listen(window, 'keydown', (event: KeyboardEvent) => {
-		if (event.ctrlKey || event.metaKey) {
-			const _key: string = String.fromCharCode(event.which).toLowerCase();
-
-			if (key == _key) {
-				event.preventDefault();
-				callback.apply(event.target, [event]);
-				return;
-			}
-		}
-	});
-};
-
-/**
- * Debounce a function.
- *
- * @param callback
- * @param [timeout]
- * @returns the debounced function
- */
-export const debounce = (
-	callback: (...args: any[]) => void,
-	timeout: number = 50
-): ((...args: any[]) => void) => {
-	let timer: NodeJS.Timer;
-
-	return (...args: any[]) => {
-		clearTimeout(timer);
-
-		timer = setTimeout(() => {
-			callback.apply(this, args);
-		}, timeout);
-	};
-};
-JS;
 
 ?><!doctype html>
 <html class="<?php echo $ui; ?>">
@@ -79,7 +38,7 @@ JS;
 		<link
 			id="link"
 			rel="stylesheet"
-			href="themes/<?php echo $selected . '?t=' . time(); ?>"
+			href="themes/<?php echo $selectedTheme . '?t=' . time(); ?>"
 		/>
 		<link href="https://unpkg.com/@fontsource/jetbrains-mono@5.0.19/index.css" rel="stylesheet">
 		<style>
@@ -87,6 +46,10 @@ JS;
 				--am-prism-font-family: "JetBrains Mono";
 				--am-prism-font-size: 1rem;
 				--am-prism-border-width: 1px;
+			}
+
+			pre[class*='language-'] .tag {
+				all: inherit;
 			}
 
 			.theme-dark {
@@ -114,18 +77,32 @@ JS;
 					<div class="buttons">
 						<div class="dropdown is-hoverable is-right">
 							<div class="dropdown-trigger">
-								<button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-									<span id="label"><?php echo $selected; ?></span>
+								<button class="button" aria-haspopup="true" aria-controls="dropdown-menu-theme">
+									<span><?php echo $selectedTheme; ?></span>
 								</button>
 							</div>
-							<div class="dropdown-menu" id="dropdown-menu" role="menu">
+							<div class="dropdown-menu" id="dropdown-menu-theme" role="menu">
 								<div class="dropdown-content">
 									<?php foreach ($themes as $theme) {
-									    $active = $theme == $selected ? 'is-active' : '';
+									    $active = $theme == $selectedTheme ? 'is-active' : '';
 									    $query = http_build_query(array_merge($_GET, array('theme' => $theme)));
 									    echo '<a href="?' . $query . '" class="dropdown-item ' . $active . '">' . $theme . '</a>';
 									} ?>
 								</div>
+							</div>
+						</div>
+						<div class="dropdown is-hoverable is-right">
+							<div class="dropdown-trigger">
+								<button class="button" aria-haspopup="true" aria-controls="dropdown-menu-code">
+									<span><?php echo $selectedExample; ?></span>
+								</button>
+							</div>
+							<div class="dropdown-menu" id="dropdown-menu-code" role="menu">
+									<?php foreach ($examples as $example) {
+									    $active = $selectedExample == $example ? 'is-active' : '';
+									    $query = http_build_query(array_merge($_GET, array('code' => $example)));
+									    echo '<a href="?' . $query . '" class="dropdown-item ' . $active . '">' . $example . '</a>';
+									} ?>
 							</div>
 						</div>
 						<a href="?<?php echo $uiButtonQuery ?>" class="button"><?php echo $uiButton; ?></a>		
@@ -134,7 +111,7 @@ JS;
 			</div>
 		</nav>
 		<div class="container my-6 line-numbers">
-			<pre><code class="language-typescript"><?php echo $code; ?></code></pre>
+			<pre><code class="language-<?php echo $selectedExample; ?>"><?php echo $code; ?></code></pre>
 		</div>
 	</body>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>

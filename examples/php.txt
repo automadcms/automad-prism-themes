@@ -1,0 +1,25 @@
+class Test {
+    /**
+     * Recursively list all items in a directory.
+     *
+     * @param string $directory
+     * @param string $base
+     * @return array The list of items
+     */
+    public static function listDirectoryRecursively(string $directory, string $base = AM_BASE_DIR): array {
+        $items = array();
+        $exclude = array('node_modules', 'vendor');
+
+        foreach (self::glob($directory . '/*') as $item) {
+            if (!in_array(basename($item), $exclude)) {
+                $items[] = Str::stripStart($item, $base);
+
+                if (is_dir($item)) {
+                    $items = array_merge($items, self::listDirectoryRecursively($item, $base));
+                }
+            }
+        }
+
+        return $items;
+    }
+}
