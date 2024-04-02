@@ -82,6 +82,7 @@ pre[class*='language-'] {
 	color: #4182bc;
 }
 
+.token.variable,
 .token.operator {
 	color: #d4d4d4;
 }

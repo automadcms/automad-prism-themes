@@ -114,9 +114,9 @@ pre[class*='language-'] > code[class*='language-'] {
 	color: #d2a8ff;
 }
 
+.token.class-name,
 .token.regex,
-.token.important,
-.token.variable {
+.token.important {
 	color: #a8daff;
 }
 

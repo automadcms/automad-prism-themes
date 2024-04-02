@@ -61,12 +61,10 @@ pre[class*='language-'] {
 
 .token.variable {
 	color: #027c9b;
-	font-style: italic;
 }
 
 .token.keyword {
-	color: #68d4f1;
-	font-style: italic;
+	color: #50a3b5;
 }
 
 .token.comment {

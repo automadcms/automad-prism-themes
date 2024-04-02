@@ -47,7 +47,7 @@ pre[class*='language-'] {
 }
 
 .token.variable {
-	color: #a277ff;
+	color: #edecee;
 }
 
 .token.keyword {
@@ -67,7 +67,7 @@ pre[class*='language-'] {
 }
 
 .token.punctuation {
-	color: #a277ff;
+	color: #edeceedd;
 }
 
 .token.constant {
@@ -98,6 +98,7 @@ pre[class*='language-'] {
 	color: #ff6767;
 }
 
+.token.type-hint,
 .token.builtin {
 	color: #f694ff;
 }
@@ -107,7 +108,7 @@ pre[class*='language-'] {
 }
 
 .token.comment {
-	color: #444059;
+	color: #edecee5f;
 }
 
 .token.class-name {

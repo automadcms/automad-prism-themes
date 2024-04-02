@@ -69,7 +69,6 @@ pre[class*='language-'],
 }
 
 .token.function,
-.token.variable,
 .token.placeholder {
 	color: #b58900;
 }

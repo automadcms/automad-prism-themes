@@ -91,6 +91,7 @@ pre[class*='language-'] {
 	color: #707070;
 }
 
+.token.punctuation,
 .token.selector {
 	color: #6c6c6c;
 }

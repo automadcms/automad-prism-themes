@@ -62,17 +62,13 @@ pre[class*='language-'] {
 	color: #ffae82;
 }
 
-.token.builtin {
-	color: #c39eff;
-}
-
 .token.comment {
 	color: #585775;
 	font-style: italic;
 }
 
 .token.string {
-	color: #585775;
+	color: #5fee9b;
 	font-style: italic;
 }
 
@@ -81,7 +77,7 @@ pre[class*='language-'] {
 }
 
 .token.keyword {
-	color: #bdb6d360;
+	color: #bdb6d3;
 }
 
 .token.operator {
@@ -118,6 +114,11 @@ pre[class*='language-'] {
 
 .token.symbol {
 	color: #5fee9b;
+}
+
+.token.type-hint,
+.token.builtin {
+	color: #c39eff;
 }
 
 .token.important,

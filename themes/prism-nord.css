@@ -66,8 +66,7 @@ pre[class*='language-'] {
 .token.entity,
 .token.url,
 .language-css .token.string,
-.style .token.string,
-.token.variable {
+.style .token.string {
 	color: #81a1c1;
 }
 

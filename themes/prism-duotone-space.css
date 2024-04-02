@@ -63,6 +63,7 @@ code[class*='language-'] ::selection {
 	color: #767693;
 }
 
+.token.variable,
 .token.tag-id,
 .token.selector,
 .token.atrule-id {
@@ -95,8 +96,7 @@ code.language-scss,
 	color: #fe8c52;
 }
 
-.token.placeholder,
-.token.variable {
+.token.placeholder {
 	color: #fe8c52;
 }
 
