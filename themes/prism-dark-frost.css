@@ -59,7 +59,7 @@ pre[class*='language-'] {
 }
 
 .token.variable {
-	color: #8da5a5;
+	color: #e0f6f7;
 }
 
 .token.keyword {
@@ -145,7 +145,7 @@ pre[class*='language-'] {
 }
 
 :root {
-	--am-prism-line-numbers-color: #285e5cbb;
+	--am-prism-line-numbers-color: #285e5c;
 	--am-prism-line-numbers-border: #285e5c44;
 	--am-prism-copy-color: #e0f6f7;
 	--am-prism-copy-bg: #285e5c33;
