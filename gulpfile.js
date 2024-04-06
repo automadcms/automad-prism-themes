@@ -1,4 +1,4 @@
-const { src, dest, parallel } = require('gulp');
+const { src, dest, series } = require('gulp');
 const cleanCSS = require('gulp-clean-css');
 const CleanCSS = require('clean-css');
 const header = require('gulp-header');
@@ -69,4 +69,4 @@ function mergeLightDark() {
 	return Promise.resolve();
 }
 
-exports.build = parallel(minify, mergeLightDark);
+exports.build = series(minify, mergeLightDark);
