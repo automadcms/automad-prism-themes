@@ -101,7 +101,7 @@
 				<a
 					id="open-combo-help"
 					class="has-text-weight-medium has-text-primary"
-					>selector startegy</a
+					>selector strategy</a
 				>. The light colors are used by default.
 			</p>
 			<div class="grid is-col-min-9 my-6 pb-4">__LIGHT_DARK__</div>
@@ -152,24 +152,29 @@
 			const button = document.getElementById('open-combo-help');
 			const modal = document.getElementById('combo-help');
 
-			const toggle = (event) => {
+			const open = (event) => {
 				event.preventDefault();
-				modal.classList.toggle('is-active');
+				modal.classList.add('is-active');
 			};
 
-			button.addEventListener('click', toggle);
+			const close = (event) => {
+				event.preventDefault();
+				modal.classList.remove('is-active');
+			};
+
+			button.addEventListener('click', open);
 
 			document
 				.querySelectorAll(
 					'.modal-background, .modal-close, .modal-close-button',
 				)
-				.forEach((close) => {
-					close.addEventListener('click', toggle);
+				.forEach((element) => {
+					element.addEventListener('click', close);
 				});
 
 			document.addEventListener('keydown', (event) => {
 				if (event.key === 'Escape') {
-					toggle(event);
+					close(event);
 				}
 			});
 		</script>
