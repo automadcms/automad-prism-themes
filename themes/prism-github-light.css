@@ -11,9 +11,7 @@ code[class*='language-'] {
 }
 
 pre[class*='language-']::selection,
-code[class*='language-']::selection,
-pre[class*='language-']::mozselection,
-code[class*='language-']::mozselection {
+code[class*='language-']::selection {
 	text-shadow: none;
 	background: #9fc6e9;
 }
