@@ -1,13 +1,43 @@
 [
 	{
+		"light": "prism-atom-one-light.css",
+		"dark": "prism-atom-one-dark.css",
+		"name": "Atom One"
+	},
+	{
+		"light": "prism-ayu-light.css",
+		"dark": "prism-ayu-dark.css",
+		"name": "Ayu"
+	},
+	{
+		"light": "prism-ayu-light.css",
+		"dark": "prism-ayu-mirage.css",
+		"name": "Ayu Mirage"
+	},
+	{
+		"light": "prism-bearded-vivid-light.css",
+		"dark": "prism-bearded-arc-blueberry.css",
+		"name": "Bearded Arc Blueberry"
+	},
+	{
 		"light": "prism-boola-light.css",
 		"dark": "prism-boola-dark.css",
 		"name": "Boola"
 	},
 	{
 		"light": "prism-catppuccin-latte.css",
+		"dark": "prism-catppuccin-frappe.css",
+		"name": "Catppuccin Frappe"
+	},
+	{
+		"light": "prism-catppuccin-latte.css",
 		"dark": "prism-catppuccin-macchiato.css",
 		"name": "Catppuccin Macchiato"
+	},
+	{
+		"light": "prism-catppuccin-latte.css",
+		"dark": "prism-catppuccin-mocha.css",
+		"name": "Catppuccin Mocha"
 	},
 	{
 		"light": "prism-coldark-cold.css",
@@ -25,9 +55,9 @@
 		"name": "Gruvbox"
 	},
 	{
-		"light": "prism-one-light.css",
-		"dark": "prism-one-dark.css",
-		"name": "One"
+		"light": "prism-night-owl-light.css",
+		"dark": "prism-night-owl.css",
+		"name": "Night Owl"
 	},
 	{
 		"light": "prism-rose-pine-dawn.css",
@@ -35,8 +65,33 @@
 		"name": "Rose Pine"
 	},
 	{
+		"light": "prism-serendipity-morning.css",
+		"dark": "prism-serendipity-midnight.css",
+		"name": "Serendipity Midnight"
+	},
+	{
+		"light": "prism-serendipity-morning.css",
+		"dark": "prism-serendipity-sunset.css",
+		"name": "Serendipity Sunset"
+	},
+	{
+		"light": "prism-tailwind-ice.css",
+		"dark": "prism-tailwind-moon-blue.css",
+		"name": "Tailwind Moon Blue"
+	},
+	{
+		"light": "prism-tokyo-night-light.css",
+		"dark": "prism-tokyo-night.css",
+		"name": "Tokyo Night"
+	},
+	{
 		"light": "prism-tokyo-night-light.css",
 		"dark": "prism-tokyo-night-storm.css",
 		"name": "Tokyo Night Storm"
+	},
+	{
+		"light": "prism-verdandi.css",
+		"dark": "prism-verdandi-alter.css",
+		"name": "Verdandi"
 	}
 ]
