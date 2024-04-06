@@ -9,9 +9,10 @@
 			href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css"
 		/>
 		<style>
-			.theme-dark {
-				color-scheme: dark;
-				--bulma-scheme-main: hsl(220, 9%, 6%);
+			@media (prefers-color-scheme: dark) {
+				:root {
+					color-scheme: dark;
+				}
 			}
 
 			.grid {
@@ -25,10 +26,40 @@
 				}
 			}
 
+			p {
+				max-width: 52rem;
+			}
+
+			p code {
+				color: inherit;
+			}
+
 			img {
 				width: 100%;
 				border-radius: 0.4rem;
-				border: 1px solid hsla(220, 9%, 50%, 0.25);
+				box-shadow: 0 1rem 2rem -0.4rem rgba(0, 0, 0, 0.3);
+			}
+
+			.stack {
+				position: relative;
+			}
+
+			.stack :first-child {
+				width: 90%;
+				margin-bottom: 30%;
+			}
+
+			.stack :last-child {
+				position: absolute;
+				width: 90%;
+				top: 30%;
+				right: 0;
+				box-shadow: 0 1rem 2rem -0.4rem rgba(0, 0, 0, 0.3);
+			}
+
+			.modal-card {
+				border-radius: 1rem;
+				overflow: hidden;
 			}
 		</style>
 	</head>
@@ -49,11 +80,284 @@
 						>
 							GitHub
 						</a>
+						<a
+							href="https://unpkg.com/browse/automad-prism-themes@latest/dist/"
+							class="button is-dark"
+							target="_blank"
+						>
+							Browse CDN
+						</a>
 					</div>
 				</div>
 			</div>
 		</nav>
 		<div class="container is-fluid">
+			<h2 class="is-size-3 pt-6 pb-4">Light/Dark Theme Combos</h2>
+			<p class="is-size-5">
+				Theme combos come in two flavors &mdash; one light and one dark
+				color scheme. They can be used on sites that support both, light
+				and dark mode. Toggling light and dark color schemes is handled
+				using this
+				<a
+					id="open-combo-help"
+					class="has-text-weight-medium has-text-primary"
+					>selector strategy</a
+				>. The light colors are used by default.
+			</p>
+			<div class="grid is-col-min-9 my-6 pb-4">
+			<div>
+				<div class="stack">
+					<img src="prism-atom-one-light.png">	
+					<img src="prism-atom-one-dark.png">	
+				</div>
+				<span>
+					Atom One<br>
+					<span class="has-text-grey-dark">
+						Light / Dark
+					</span>
+				</span>
+			</div>
+		
+			<div>
+				<div class="stack">
+					<img src="prism-ayu-light.png">	
+					<img src="prism-ayu-dark.png">	
+				</div>
+				<span>
+					Ayu<br>
+					<span class="has-text-grey-dark">
+						Light / Dark
+					</span>
+				</span>
+			</div>
+		
+			<div>
+				<div class="stack">
+					<img src="prism-ayu-light.png">	
+					<img src="prism-ayu-mirage.png">	
+				</div>
+				<span>
+					Ayu Mirage<br>
+					<span class="has-text-grey-dark">
+						Light / Dark
+					</span>
+				</span>
+			</div>
+		
+			<div>
+				<div class="stack">
+					<img src="prism-bearded-vivid-light.png">	
+					<img src="prism-bearded-arc-blueberry.png">	
+				</div>
+				<span>
+					Bearded Arc Blueberry<br>
+					<span class="has-text-grey-dark">
+						Light / Dark
+					</span>
+				</span>
+			</div>
+		
+			<div>
+				<div class="stack">
+					<img src="prism-boola-light.png">	
+					<img src="prism-boola-dark.png">	
+				</div>
+				<span>
+					Boola<br>
+					<span class="has-text-grey-dark">
+						Light / Dark
+					</span>
+				</span>
+			</div>
+		
+			<div>
+				<div class="stack">
+					<img src="prism-catppuccin-latte.png">	
+					<img src="prism-catppuccin-frappe.png">	
+				</div>
+				<span>
+					Catppuccin Frappe<br>
+					<span class="has-text-grey-dark">
+						Light / Dark
+					</span>
+				</span>
+			</div>
+		
+			<div>
+				<div class="stack">
+					<img src="prism-catppuccin-latte.png">	
+					<img src="prism-catppuccin-macchiato.png">	
+				</div>
+				<span>
+					Catppuccin Macchiato<br>
+					<span class="has-text-grey-dark">
+						Light / Dark
+					</span>
+				</span>
+			</div>
+		
+			<div>
+				<div class="stack">
+					<img src="prism-catppuccin-latte.png">	
+					<img src="prism-catppuccin-mocha.png">	
+				</div>
+				<span>
+					Catppuccin Mocha<br>
+					<span class="has-text-grey-dark">
+						Light / Dark
+					</span>
+				</span>
+			</div>
+		
+			<div>
+				<div class="stack">
+					<img src="prism-coldark-cold.png">	
+					<img src="prism-coldark-dark.png">	
+				</div>
+				<span>
+					Coldark<br>
+					<span class="has-text-grey-dark">
+						Light / Dark
+					</span>
+				</span>
+			</div>
+		
+			<div>
+				<div class="stack">
+					<img src="prism-github-light.png">	
+					<img src="prism-github-dark.png">	
+				</div>
+				<span>
+					GitHub<br>
+					<span class="has-text-grey-dark">
+						Light / Dark
+					</span>
+				</span>
+			</div>
+		
+			<div>
+				<div class="stack">
+					<img src="prism-gruvbox-light.png">	
+					<img src="prism-gruvbox-dark.png">	
+				</div>
+				<span>
+					Gruvbox<br>
+					<span class="has-text-grey-dark">
+						Light / Dark
+					</span>
+				</span>
+			</div>
+		
+			<div>
+				<div class="stack">
+					<img src="prism-night-owl-light.png">	
+					<img src="prism-night-owl.png">	
+				</div>
+				<span>
+					Night Owl<br>
+					<span class="has-text-grey-dark">
+						Light / Dark
+					</span>
+				</span>
+			</div>
+		
+			<div>
+				<div class="stack">
+					<img src="prism-rose-pine-dawn.png">	
+					<img src="prism-rose-pine.png">	
+				</div>
+				<span>
+					Rose Pine<br>
+					<span class="has-text-grey-dark">
+						Light / Dark
+					</span>
+				</span>
+			</div>
+		
+			<div>
+				<div class="stack">
+					<img src="prism-serendipity-morning.png">	
+					<img src="prism-serendipity-midnight.png">	
+				</div>
+				<span>
+					Serendipity Midnight<br>
+					<span class="has-text-grey-dark">
+						Light / Dark
+					</span>
+				</span>
+			</div>
+		
+			<div>
+				<div class="stack">
+					<img src="prism-serendipity-morning.png">	
+					<img src="prism-serendipity-sunset.png">	
+				</div>
+				<span>
+					Serendipity Sunset<br>
+					<span class="has-text-grey-dark">
+						Light / Dark
+					</span>
+				</span>
+			</div>
+		
+			<div>
+				<div class="stack">
+					<img src="prism-tailwind-ice.png">	
+					<img src="prism-tailwind-moon-blue.png">	
+				</div>
+				<span>
+					Tailwind Moon Blue<br>
+					<span class="has-text-grey-dark">
+						Light / Dark
+					</span>
+				</span>
+			</div>
+		
+			<div>
+				<div class="stack">
+					<img src="prism-tokyo-night-light.png">	
+					<img src="prism-tokyo-night.png">	
+				</div>
+				<span>
+					Tokyo Night<br>
+					<span class="has-text-grey-dark">
+						Light / Dark
+					</span>
+				</span>
+			</div>
+		
+			<div>
+				<div class="stack">
+					<img src="prism-tokyo-night-light.png">	
+					<img src="prism-tokyo-night-storm.png">	
+				</div>
+				<span>
+					Tokyo Night Storm<br>
+					<span class="has-text-grey-dark">
+						Light / Dark
+					</span>
+				</span>
+			</div>
+		
+			<div>
+				<div class="stack">
+					<img src="prism-verdandi.png">	
+					<img src="prism-verdandi-alter.png">	
+				</div>
+				<span>
+					Verdandi<br>
+					<span class="has-text-grey-dark">
+						Light / Dark
+					</span>
+				</span>
+			</div>
+		</div>
+			<h2 class="is-size-3 pt-2 pb-4">Single Themes</h2>
+			<p class="is-size-5">
+				Single themes just come in one <i>single</i> flavour. Unlike
+				theme combos, a single theme is not affacted by classes of
+				parent elements.
+			</p>
 			<div class="grid is-col-min-9 my-6 pb-4">
 <a
 href="https://github.com/automadcms/automad-prism-themes/blob/master/themes/prism-atom-dark.css" 
@@ -64,12 +368,68 @@ target="_blank"
 <div class="has-text-text">Atom Dark</div>
 </a>
 <a
+href="https://github.com/automadcms/automad-prism-themes/blob/master/themes/prism-atom-one-dark.css" 
+class="cell"
+target="_blank"
+>
+<img src="prism-atom-one-dark.png">
+<div class="has-text-text">Atom One Dark</div>
+</a>
+<a
+href="https://github.com/automadcms/automad-prism-themes/blob/master/themes/prism-atom-one-light.css" 
+class="cell"
+target="_blank"
+>
+<img src="prism-atom-one-light.png">
+<div class="has-text-text">Atom One Light</div>
+</a>
+<a
 href="https://github.com/automadcms/automad-prism-themes/blob/master/themes/prism-aura-dark.css" 
 class="cell"
 target="_blank"
 >
 <img src="prism-aura-dark.png">
 <div class="has-text-text">Aura Dark</div>
+</a>
+<a
+href="https://github.com/automadcms/automad-prism-themes/blob/master/themes/prism-ayu-dark.css" 
+class="cell"
+target="_blank"
+>
+<img src="prism-ayu-dark.png">
+<div class="has-text-text">Ayu Dark</div>
+</a>
+<a
+href="https://github.com/automadcms/automad-prism-themes/blob/master/themes/prism-ayu-light.css" 
+class="cell"
+target="_blank"
+>
+<img src="prism-ayu-light.png">
+<div class="has-text-text">Ayu Light</div>
+</a>
+<a
+href="https://github.com/automadcms/automad-prism-themes/blob/master/themes/prism-ayu-mirage.css" 
+class="cell"
+target="_blank"
+>
+<img src="prism-ayu-mirage.png">
+<div class="has-text-text">Ayu Mirage</div>
+</a>
+<a
+href="https://github.com/automadcms/automad-prism-themes/blob/master/themes/prism-bearded-arc-blueberry.css" 
+class="cell"
+target="_blank"
+>
+<img src="prism-bearded-arc-blueberry.png">
+<div class="has-text-text">Bearded Arc Blueberry</div>
+</a>
+<a
+href="https://github.com/automadcms/automad-prism-themes/blob/master/themes/prism-bearded-vivid-light.css" 
+class="cell"
+target="_blank"
+>
+<img src="prism-bearded-vivid-light.png">
+<div class="has-text-text">Bearded Vivid Light</div>
 </a>
 <a
 href="https://github.com/automadcms/automad-prism-themes/blob/master/themes/prism-boola-dark.css" 
@@ -296,6 +656,14 @@ target="_blank"
 <div class="has-text-text">Monochrome Light</div>
 </a>
 <a
+href="https://github.com/automadcms/automad-prism-themes/blob/master/themes/prism-night-owl-light.css" 
+class="cell"
+target="_blank"
+>
+<img src="prism-night-owl-light.png">
+<div class="has-text-text">Night Owl Light</div>
+</a>
+<a
 href="https://github.com/automadcms/automad-prism-themes/blob/master/themes/prism-night-owl.css" 
 class="cell"
 target="_blank"
@@ -320,22 +688,6 @@ target="_blank"
 <div class="has-text-text">Nord</div>
 </a>
 <a
-href="https://github.com/automadcms/automad-prism-themes/blob/master/themes/prism-one-dark.css" 
-class="cell"
-target="_blank"
->
-<img src="prism-one-dark.png">
-<div class="has-text-text">One Dark</div>
-</a>
-<a
-href="https://github.com/automadcms/automad-prism-themes/blob/master/themes/prism-one-light.css" 
-class="cell"
-target="_blank"
->
-<img src="prism-one-light.png">
-<div class="has-text-text">One Light</div>
-</a>
-<a
 href="https://github.com/automadcms/automad-prism-themes/blob/master/themes/prism-panda.css" 
 class="cell"
 target="_blank"
@@ -350,14 +702,6 @@ target="_blank"
 >
 <img src="prism-poimandres.png">
 <div class="has-text-text">Poimandres</div>
-</a>
-<a
-href="https://github.com/automadcms/automad-prism-themes/blob/master/themes/prism-pojoaque.css" 
-class="cell"
-target="_blank"
->
-<img src="prism-pojoaque.png">
-<div class="has-text-text">Pojoaque</div>
 </a>
 <a
 href="https://github.com/automadcms/automad-prism-themes/blob/master/themes/prism-rose-pine-dawn.css" 
@@ -392,6 +736,30 @@ target="_blank"
 <div class="has-text-text">Sea Shells Dark</div>
 </a>
 <a
+href="https://github.com/automadcms/automad-prism-themes/blob/master/themes/prism-serendipity-midnight.css" 
+class="cell"
+target="_blank"
+>
+<img src="prism-serendipity-midnight.png">
+<div class="has-text-text">Serendipity Midnight</div>
+</a>
+<a
+href="https://github.com/automadcms/automad-prism-themes/blob/master/themes/prism-serendipity-morning.css" 
+class="cell"
+target="_blank"
+>
+<img src="prism-serendipity-morning.png">
+<div class="has-text-text">Serendipity Morning</div>
+</a>
+<a
+href="https://github.com/automadcms/automad-prism-themes/blob/master/themes/prism-serendipity-sunset.css" 
+class="cell"
+target="_blank"
+>
+<img src="prism-serendipity-sunset.png">
+<div class="has-text-text">Serendipity Sunset</div>
+</a>
+<a
 href="https://github.com/automadcms/automad-prism-themes/blob/master/themes/prism-shades-of-purple.css" 
 class="cell"
 target="_blank"
@@ -414,6 +782,22 @@ target="_blank"
 >
 <img src="prism-synthwave84.png">
 <div class="has-text-text">Synthwave84</div>
+</a>
+<a
+href="https://github.com/automadcms/automad-prism-themes/blob/master/themes/prism-tailwind-ice.css" 
+class="cell"
+target="_blank"
+>
+<img src="prism-tailwind-ice.png">
+<div class="has-text-text">Tailwind Ice</div>
+</a>
+<a
+href="https://github.com/automadcms/automad-prism-themes/blob/master/themes/prism-tailwind-moon-blue.css" 
+class="cell"
+target="_blank"
+>
+<img src="prism-tailwind-moon-blue.png">
+<div class="has-text-text">Tailwind Moon Blue</div>
 </a>
 <a
 href="https://github.com/automadcms/automad-prism-themes/blob/master/themes/prism-tokyo-night-light.css" 
@@ -440,6 +824,22 @@ target="_blank"
 <div class="has-text-text">Tokyo Night</div>
 </a>
 <a
+href="https://github.com/automadcms/automad-prism-themes/blob/master/themes/prism-verdandi-alter.css" 
+class="cell"
+target="_blank"
+>
+<img src="prism-verdandi-alter.png">
+<div class="has-text-text">Verdandi Alter</div>
+</a>
+<a
+href="https://github.com/automadcms/automad-prism-themes/blob/master/themes/prism-verdandi.css" 
+class="cell"
+target="_blank"
+>
+<img src="prism-verdandi.png">
+<div class="has-text-text">Verdandi</div>
+</a>
+<a
 href="https://github.com/automadcms/automad-prism-themes/blob/master/themes/prism-violet-dream.css" 
 class="cell"
 target="_blank"
@@ -456,5 +856,70 @@ target="_blank"
 <div class="has-text-text">Vsc Dark Plus</div>
 </a></div>
 		</div>
+		<div id="combo-help" class="modal">
+			<div class="modal-background"></div>
+			<div class="modal-card content">
+				<section class="modal-card-body">
+					<p>
+						In order to provide a fine-grained control over the
+						active color scheme,
+						<code>prefers-color-scheme</code> is ignored by theme
+						combos and the following selectors are used to apply a
+						scheme instead:
+					</p>
+					<ul>
+						<li>
+							<code>html[class*="dark-"]</code> will enable dark
+							mode whenever the <code>html</code> element has a
+							class containing "dark-"
+						</li>
+						<li>
+							<code>html[class*="-dark"]</code> will enable dark
+							mode whenever the <code>html</code> element has a
+							class containing "-dark"
+						</li>
+						<li>
+							<code>.dark</code> will enable dark mode for any
+							element nested inside a container with the "dark"
+							class.
+						</li>
+					</ul>
+					<div class="pt-4 is-flex is-justify-content-flex-end">
+						<button class="button modal-close-button">Close</button>
+					</div>
+				</section>
+			</div>
+			<button class="modal-close is-large" aria-label="close"></button>
+		</div>
+		<script>
+			const button = document.getElementById('open-combo-help');
+			const modal = document.getElementById('combo-help');
+
+			const open = (event) => {
+				event.preventDefault();
+				modal.classList.add('is-active');
+			};
+
+			const close = (event) => {
+				event.preventDefault();
+				modal.classList.remove('is-active');
+			};
+
+			button.addEventListener('click', open);
+
+			document
+				.querySelectorAll(
+					'.modal-background, .modal-close, .modal-close-button',
+				)
+				.forEach((element) => {
+					element.addEventListener('click', close);
+				});
+
+			document.addEventListener('keydown', (event) => {
+				if (event.key === 'Escape') {
+					close(event);
+				}
+			});
+		</script>
 	</body>
 </html>
