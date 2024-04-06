@@ -1,18 +1,18 @@
 # Automad Prism Themes
 
-A modern [collection](https://automadcms.github.io/automad-prism-themes) of syntax highlighting themes for [Prism](https://prismjs.com).
+A modern [collection](https://automadcms.github.io/automad-prism-themes) of more than 60 trending syntax highlighting themes for [Prism](https://prismjs.com).
 
-> [!IMPORTANT]
-> This is a fork of the [PrismJS/prism-themes](https://github.com/PrismJS/prism-themes) repository. All included themes are optimized to work with Automad. New themes have been added, some have been removed.
+[![Gallery](screenshots/readme.png)](https://automadcms.github.io/automad-prism-themes/)
 
-| [Visit the Theme Gallery](https://automadcms.github.io/automad-prism-themes) |
-| :--------------------------------------------------------------------------: |
+| [Visit Theme Gallery](https://automadcms.github.io/automad-prism-themes) | [Browse CDN](https://unpkg.com/browse/automad-prism-themes@latest/dist/) |
+| :----------------------------------------------------------------------: | :----------------------------------------------------------------------: |
 
 ---
 
 <!-- vim-markdown-toc GFM -->
 
 - [Included Themes](#included-themes)
+- [Light & Dark Mode Combos](#light--dark-mode-combos)
 - [How to use a Theme](#how-to-use-a-theme)
 - [Customizing](#customizing)
 - [Adding new Themes](#adding-new-themes)
@@ -23,9 +23,13 @@ A modern [collection](https://automadcms.github.io/automad-prism-themes) of synt
 
 A gallery with screenshots of all included themes can be found [here](https://automadcms.github.io/automad-prism-themes).
 
+## Light & Dark Mode Combos
+
+This collection also comes with a couple of [theme combos](https://automadcms.github.io/automad-prism-themes) that support toggling light and dark mode out of the box. These combos come in two flavors — one light and one dark color scheme.
+
 ## How to use a Theme
 
-To use one of the themes, just include the theme's CSS file in your page. Example:
+To use one of the themes, just include the theme's CSS file in your page. Theme files can be directly loaded from [CDN](https://unpkg.com/browse/automad-prism-themes@latest/dist/) or included locally. Example:
 
 ```html
 <!doctype html>
@@ -62,6 +66,9 @@ Some basic theme settings are exposed using CSS custom properties. These propert
 ```
 
 ## Adding new Themes
+
+> [!IMPORTANT]
+> This collection is carefully curated and serves as the main repository of Prism themes for Automad. Please understand that pull-request have a high chance of being ignored. In case you are missing a theme, feel free to request it by opening an issue.
 
 Follow these steps in order to add a new theme:
 
