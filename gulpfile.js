@@ -1,10 +1,7 @@
 const { src, dest, parallel } = require('gulp');
-const foreach = require('gulp-foreach');
 const cleanCSS = require('gulp-clean-css');
-const rename = require('gulp-rename');
-const path = require('path');
+const CleanCSS = require('clean-css');
 const header = require('gulp-header');
-const footer = require('gulp-footer');
 const fs = require('fs');
 const lightDark = require('./light-dark.json');
 
@@ -28,38 +25,53 @@ function mergeLightDark() {
 					<img src="${data.light.replace('.css', '.png')}">	
 					<img src="${data.dark.replace('.css', '.png')}">	
 				</div>
-				<span>${data.name} Combo</span>
+				<span>
+					${data.name}<br>
+					<span class="has-text-grey-dark">
+						Light / Dark
+					</span>
+				</span>
 			</div>
 		`);
 	});
 
 	const html = partials.join('');
-
 	fs.writeFileSync('light-dark-gallery.html', html);
 
-	const lightThemes = items.map((item) => `themes/${item.light}`);
+	const clean = (theme) =>
+		theme.replace(
+			/(pre|code)\[class\*='language-'\]::-moz[^\{]+\{[^\}]+\}/,
+			'',
+		);
 
-	return src(lightThemes).pipe(
-		foreach((stream, file) => {
-			const filename = path.basename(file.path);
+	items.forEach((data) => {
+		const light = clean(fs.readFileSync(`./themes/${data.light}`, 'utf8'));
+		const dark = clean(fs.readFileSync(`./themes/${data.dark}`, 'utf8'));
 
-			const data = items.find((item) => item.light == filename);
-			const darkFile = `themes/${data.dark}`;
-			const darkTheme = fs.readFileSync(darkFile, 'utf8');
-			const name = data.name.toLowerCase().replace(/\s/g, '-');
+		const nestedDark = dark
+			.replace(/(\n)([^\s\}@\/])/g, '$1& $2')
+			.replace(/\:root/g, '');
 
-			const prefixed = darkTheme
-				.replace(/(\n)([^\s\}@\/])/g, '$1[class*="dark"] $2')
-				.replace(/\:root/g, '');
+		const combo = `
+			${base}
+			${light}
+			html[class*="-dark"],
+			html[class*="dark-"],
+			.dark {
+				${nestedDark}
+			}
+		`;
 
-			return stream
-				.pipe(header(base))
-				.pipe(footer(prefixed))
-				.pipe(cleanCSS())
-				.pipe(rename(`prism-${name}.light-dark.css`))
-				.pipe(dest('dist'));
-		}),
-	);
+		const minified = new CleanCSS().minify(combo);
+		const name = data.name.replace(/\s/g, '-').toLowerCase();
+
+		fs.writeFileSync(
+			`./dist/prism-${name}.light-dark.css`,
+			minified.styles,
+		);
+	});
+
+	return Promise.resolve();
 }
 
 exports.build = parallel(minify, mergeLightDark);
