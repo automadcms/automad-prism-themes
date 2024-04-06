@@ -56,6 +56,11 @@
 				right: 0;
 				box-shadow: 0 1rem 2rem -0.4rem rgba(0, 0, 0, 0.3);
 			}
+
+			.modal-card {
+				border-radius: 1rem;
+				overflow: hidden;
+			}
 		</style>
 	</head>
 	<body>
@@ -75,6 +80,13 @@
 						>
 							GitHub
 						</a>
+						<a
+							href="https://unpkg.com/browse/automad-prism-themes@latest/dist/"
+							class="button is-dark"
+							target="_blank"
+						>
+							Browse CDN
+						</a>
 					</div>
 				</div>
 			</div>
@@ -82,12 +94,15 @@
 		<div class="container is-fluid">
 			<h2 class="is-size-3 pt-6 pb-4">Light/Dark Theme Combos</h2>
 			<p class="is-size-5">
-				Combo themes include two flavours &mdash; one light and one dark
-				theme. They can be used on sites that support both, light and
-				dark mode. By default the light theme will be displayed.
-				Whenever an HTML element has a class that contains the word
-				<i>dark</i>, all containing code blocks are rendered using the
-				dark falvour.
+				Theme combos come in two flavors &mdash; one light and one dark
+				color scheme. They can be used on sites that support both, light
+				and dark mode. Toggling light and dark color schemes is handled
+				using this
+				<a
+					id="open-combo-help"
+					class="has-text-weight-medium has-text-primary"
+					>selector startegy</a
+				>. The light colors are used by default.
 			</p>
 			<div class="grid is-col-min-9 my-6 pb-4">__LIGHT_DARK__</div>
 			<h2 class="is-size-3 pt-2 pb-4">Single Themes</h2>
@@ -98,5 +113,65 @@
 			</p>
 			<div class="grid is-col-min-9 my-6 pb-4">__THEMES__</div>
 		</div>
+		<div id="combo-help" class="modal">
+			<div class="modal-background"></div>
+			<div class="modal-card content">
+				<section class="modal-card-body">
+					<p>
+						In order to provide a fine-grained control over the
+						active color scheme,
+						<code>prefers-color-scheme</code> is ignored by theme
+						combos and the following selectors are used to apply a
+						scheme instead:
+					</p>
+					<ul>
+						<li>
+							<code>html[class*="dark-"]</code> will enable dark
+							mode whenever the <code>html</code> element has a
+							class containing "dark-"
+						</li>
+						<li>
+							<code>html[class*="-dark"]</code> will enable dark
+							mode whenever the <code>html</code> element has a
+							class containing "-dark"
+						</li>
+						<li>
+							<code>.dark</code> will enable dark mode for any
+							element nested inside a container with the "dark"
+							class.
+						</li>
+					</ul>
+					<div class="pt-4 is-flex is-justify-content-flex-end">
+						<button class="button modal-close-button">Close</button>
+					</div>
+				</section>
+			</div>
+			<button class="modal-close is-large" aria-label="close"></button>
+		</div>
+		<script>
+			const button = document.getElementById('open-combo-help');
+			const modal = document.getElementById('combo-help');
+
+			const toggle = (event) => {
+				event.preventDefault();
+				modal.classList.toggle('is-active');
+			};
+
+			button.addEventListener('click', toggle);
+
+			document
+				.querySelectorAll(
+					'.modal-background, .modal-close, .modal-close-button',
+				)
+				.forEach((close) => {
+					close.addEventListener('click', toggle);
+				});
+
+			document.addEventListener('keydown', (event) => {
+				if (event.key === 'Escape') {
+					toggle(event);
+				}
+			});
+		</script>
 	</body>
 </html>
