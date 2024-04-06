@@ -13,7 +13,24 @@ function minify() {
 }
 
 function mergeLightDark() {
-	const base = fs.readFileSync('./themes/base.css', 'utf8');
+	const minify = (theme) => {
+		const cleaned = theme.replace(
+			/(pre|code)\[class\*='language-'\]::-moz[^\{]+\{[^\}]+\}/s,
+			'',
+		);
+
+		return new CleanCSS().minify(cleaned).styles;
+	};
+
+	const nestAndMinify = (theme) => {
+		const temp = theme
+			.replace(/(\n)([^\s\}@\/])/g, '$1.TEMP__NEST $2')
+			.replace(/\:root/g, '');
+
+		return minify(temp).replace(/\.TEMP__NEST/g, '&');
+	};
+
+	const base = minify(fs.readFileSync('./themes/base.css', 'utf8'));
 	const items = lightDark;
 
 	const partials = [];
@@ -38,37 +55,15 @@ function mergeLightDark() {
 	const html = partials.join('');
 	fs.writeFileSync('light-dark-gallery.html', html);
 
-	const clean = (theme) =>
-		theme.replace(
-			/(pre|code)\[class\*='language-'\]::-moz[^\{]+\{[^\}]+\}/,
-			'',
-		);
-
 	items.forEach((data) => {
-		const light = clean(fs.readFileSync(`./themes/${data.light}`, 'utf8'));
-		const dark = clean(fs.readFileSync(`./themes/${data.dark}`, 'utf8'));
-
-		const nestedDark = dark
-			.replace(/(\n)([^\s\}@\/])/g, '$1& $2')
-			.replace(/\:root/g, '');
-
-		const combo = `
-			${base}
-			${light}
-			html[class*="-dark"],
-			html[class*="dark-"],
-			.dark {
-				${nestedDark}
-			}
-		`;
-
-		const minified = new CleanCSS().minify(combo);
-		const name = data.name.replace(/\s/g, '-').toLowerCase();
-
-		fs.writeFileSync(
-			`./dist/prism-${name}.light-dark.css`,
-			minified.styles,
+		const light = minify(fs.readFileSync(`./themes/${data.light}`, 'utf8'));
+		const nestedDark = nestAndMinify(
+			fs.readFileSync(`./themes/${data.dark}`, 'utf8'),
 		);
+		const name = data.name.replace(/\s/g, '-').toLowerCase();
+		const combo = `${base}${light}html[class*="-dark"],html[class*="dark-"],.dark{${nestedDark}}`;
+
+		fs.writeFileSync(`./dist/prism-${name}.light-dark.css`, combo);
 	});
 
 	return Promise.resolve();
