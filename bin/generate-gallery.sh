@@ -6,7 +6,7 @@ mkdir public 2>/dev/null
 
 gallery=''
 
-for png in screenshots/*.png; do
+for png in screenshots/prism-*.png; do
 	theme=$(basename -- $png .png)
 
 	name=${theme/prism-/}

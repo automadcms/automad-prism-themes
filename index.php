@@ -112,11 +112,13 @@ $uiButtonQuery = http_build_query(array_merge($_GET, array('light' => !$lightmod
 								</button>
 							</div>
 							<div class="dropdown-menu" id="dropdown-menu-code" role="menu">
+								<div class="dropdown-content">
 									<?php foreach ($examples as $example) {
 									    $active = $selectedExample == $example ? 'is-active' : '';
 									    $query = http_build_query(array_merge($_GET, array('code' => $example)));
 									    echo '<a href="?' . $query . '" class="dropdown-item ' . $active . '">' . $example . '</a>';
 									} ?>
+								</div>
 							</div>
 						</div>
 						<a href="?<?php echo $uiButtonQuery ?>" class="button"><?php echo $uiButton; ?></a>		
