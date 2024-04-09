@@ -4,8 +4,8 @@ A modern [collection](https://automadcms.github.io/automad-prism-themes) of more
 
 [![Gallery](screenshots/readme.png)](https://automadcms.github.io/automad-prism-themes/)
 
-| [Visit Theme Gallery](https://automadcms.github.io/automad-prism-themes) | [Browse CDN](https://unpkg.com/browse/automad-prism-themes@latest/dist/) |
-| :----------------------------------------------------------------------: | :----------------------------------------------------------------------: |
+| [Theme Gallery](https://automadcms.github.io/automad-prism-themes) | [NPM](https://www.npmjs.com/package/automad-prism-themes) | [CDN](https://unpkg.com/browse/automad-prism-themes@latest/dist/) |
+| :----------------------------------------------------------------: | :-------------------------------------------------------: | :---------------------------------------------------------------: |
 
 ---
 
