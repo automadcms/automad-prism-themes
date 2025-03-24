@@ -1,5 +1,10 @@
 [
 	{
+		"light": "prism-automad-light.css",
+		"dark": "prism-automad-dark.css",
+		"name": "Automad"
+	},
+	{
 		"light": "prism-atom-one-light.css",
 		"dark": "prism-atom-one-dark.css",
 		"name": "Atom One"

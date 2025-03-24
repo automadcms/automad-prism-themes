@@ -1,0 +1,112 @@
+/**
+ * Automad Light Prism Theme
+ *
+ * Copyright (c) 2023-2025 by Marc Anton Dahmen
+ * https://marcdahmen.de
+ *
+ * Licensed under the MIT license.
+ */
+:root {
+	--am-prism-line-numbers-color: hsl(240, 7%, 74%);
+	--am-prism-border-color: hsl(240, 7%, 91%);
+	--am-prism-copy-color: hsl(240, 7%, 24%);
+	--am-prism-copy-bg: hsl(240, 7%, 89%);
+}
+
+pre[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection,
+code[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection {
+	text-shadow: none;
+	background: hsl(240, 7%, 82%);
+}
+
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
+	text-shadow: none;
+	background: hsl(240, 7%, 82%);
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+	color: hsl(240, 7%, 18%);
+	background: hsl(240, 7%, 97%);
+	border: var(--am-prism-border-width, 2px) solid var(--am-prism-border-color);
+}
+
+code[class*='language-'] {
+	color: hsl(240, 7%, 18%);
+}
+
+:not(pre) > code[class*='language-'] {
+	padding: 0.1em;
+	border-radius: 0.3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata,
+.token.punctuation {
+	color: hsl(240, 7%, 74%);
+}
+
+.token.namespace {
+	opacity: 0.7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.builtin,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted,
+.token.operator,
+.token.entity,
+.token.url,
+.token.string,
+.language-css .token.string,
+.style .token.string {
+	color: hsl(240, 7%, 64%);
+}
+
+.token.selector,
+.token.attr-name,
+.token.char,
+.token.inserted,
+.token.atrule,
+.token.attr-value,
+.token.keyword,
+.token.regex,
+.token.important,
+.token.variable {
+	color: hsl(240, 7%, 18%);
+}
+
+.token.function,
+.token.class-name {
+	color: hsl(240, 7%, 18%);
+	font-weight: bold;
+}
+
+.token.static-context,
+.token.type-hint {
+	color: hsl(240, 7%, 64%);
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
