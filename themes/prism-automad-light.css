@@ -69,13 +69,13 @@ code[class*='language-'] {
 .token.operator,
 .token.entity,
 .token.url,
-.token.string,
 .language-css .token.string,
 .style .token.string {
 	color: hsl(240, 7%, 64%);
 }
 
 .token.selector,
+.token.string,
 .token.attr-name,
 .token.char,
 .token.inserted,
