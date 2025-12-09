@@ -14,6 +14,8 @@
   "main": "index.js",
   "scripts": {
     "build": "gulp build && bash bin/generate-json.sh && bash bin/generate-gallery.sh",
+    "generate:json": "bash bin/generate-json.sh",
+    "generate:gallery": "bash bin/generate-gallery.sh",
     "release": "bash bin/release.sh",
     "screenshots": "node bin/screenshots.mjs",
     "prepublishOnly": "npm run build"
