@@ -1,0 +1,19 @@
+/*!
+ * Base Theme
+ *
+ * Copyright (c) 2025 by Marc Anton Dahmen
+ * https://marcdahmen.de
+ *
+ * Licensed under the MIT license.
+ */
+
+/**
+ * This is basically an empty color scheme that provides a base for rendering 
+ * a Prism code block containing plugins. No colors are applied here.
+ */
+:root {
+	--am-prism-line-numbers-color: inherit;
+	--am-prism-border-color: transparent;
+	--am-prism-copy-color: inherit;
+	--am-prism-copy-bg: transparent;
+}

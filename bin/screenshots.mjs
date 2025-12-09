@@ -10,6 +10,7 @@ const screenshotDir = './screenshots';
 async function getThemes() {
 	return (await fs.readdir(themesDir))
 		.map((f) => (/^prism.+(?=\.css$)/.exec(f) || [''])[0])
+		.filter((f) => !f.match(/prism-base/))
 		.filter((f) => f);
 }
 
