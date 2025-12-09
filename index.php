@@ -51,7 +51,7 @@ $uiButtonQuery = http_build_query(array_merge($_GET, array('light' => !$lightmod
 		<link href="https://unpkg.com/@fontsource-variable/jetbrains-mono@5.2.8/index.css" rel="stylesheet">
 		<style>
 			:root {
-				--am-prism-font-family: "JetBrains Mono";
+				--am-prism-font-family: "JetBrains Mono Variable";
 				--am-prism-font-size: 1rem;
 				--am-prism-border-width: 1px;
 			}
