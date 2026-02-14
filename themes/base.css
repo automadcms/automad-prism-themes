@@ -8,6 +8,7 @@ pre[class*='language-'] {
 }
 
 pre > code[class*='language-'] {
+	display: block;
 	padding: initial;
 	font-size: 1em;
 	font-weight: normal;
